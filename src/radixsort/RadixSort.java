@@ -43,7 +43,8 @@ public class RadixSort {
             System.err.println("File not found: " + e.getMessage());
         }
         Sort myNums = new Sort(inputList);
-        myNums.getNum();
+        System.out.println(myNums.toString());
+        myNums.sort();
         }
     
 }

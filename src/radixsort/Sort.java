@@ -49,32 +49,20 @@ public class Sort {
         int ret = 0;
         int dig = 0;
         int maxLngth = getMax(list)-1;
-        int[] eval = new int[list.size()];
-        
+
             for(int i = maxLngth; i >= 0; i--){
                 int lowestDig = 9;
                 for(int j = 0; j < list.size(); j++){
-                    System.out.println("\nIteration: "+ i);
-                    
-                    tempStr = list.get(j);
-                     
+                    System.out.println("\nIteration: "+ i);    
+                    tempStr = list.get(j);//stores the specified element in a string 
                     System.out.println("Current String: " + tempStr);
-                    
-                    dig = tempStr.charAt(i);
-                    dig = convertNum(dig);
-                    
-                    list.set(j,tempStr);
-                    if(dig < lowestDig){
-                        lowestDig = dig;
-                        System.out.println("lowestDig: " + dig);
-                         
-                    }
+                    dig = getDigit(tempStr,i);//stores the specified string position 
                 }
                 System.out.println("\n------------");
             } 
            System.out.println(list.toString());
     }
-     
+       
     /**
      * Adds "0"'s to the object's indices if a number is less than the maximum
      * count of digits
@@ -83,6 +71,7 @@ public class Sort {
         String tempStr = null;
         int maxLngth = getMax(list);
         int tempLngth;
+        
             for(int j = 0; j < maxLngth-1; j++){
                 for(int i = 0; i < list.size(); i++){
                   
@@ -93,7 +82,8 @@ public class Sort {
             if(tempLngth < maxLngth){
                 tempStr = tempStr.substring(0,0) + "0" +tempStr;
    
-                list.set(i, tempStr);
+    
+                  list.set(i, tempStr);
             }  
             }
         }  
@@ -113,8 +103,36 @@ public class Sort {
         return ret;
     }
     
+    /**
+     * Extracts a char from a specified string position. It is returned as an
+     * int.
+    */
+    private int getDigit(String s,int n){
+        int dig;
+        dig = s.charAt(n);
+        return (convertNum(dig));
+    }
+    
     @Override
     public String toString(){
        return list.toString();
     }
+    
+//    public void reverseElements(){
+//        ArrayList temp = new ArrayList();
+//        String tempStr;
+//        String hold = null;
+//        for(int i = list.size(); i > 0; i--){
+//            tempStr = list.get(i);
+//            char[] tempChar = new char[tempStr.length()];
+//            
+//                for(int j = 0; j < tempStr.length(); j++){
+//                    tempChar[j] = tempStr.charAt(j);
+//                }
+//                for(int k = tempChar.length-1; k > 0; k--){
+//                    hold+= hold + tempChar[k];
+//                    System.out.println(hold);
+//                }
+//        }
+//    }
 }

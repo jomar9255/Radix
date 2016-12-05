@@ -43,20 +43,21 @@ public class Sort {
         }
         return count;
     }
-    
+     
     public void sort(){
         String tempStr = null;
         int ret = 0;
         int dig = 0;
         int maxLngth = getMax(list)-1;
+        
         ArrayList<String> temp = new ArrayList();
         
                for(int i = maxLngth; i >= 0; i--){
                 int lowestDig = 9;
-                temp.clear();
+                //temp.clear();
                // temp.ensureCapacity(i);
                 try{
-                for(int j = list.size(); j > 0; j++){
+                for(int j = 0; j < list.size(); j++){
                     System.out.println("\nIteration: "+ i);    
                     tempStr = list.get(i);//stores the specified element in a string 
                     System.out.println("Current String: " + tempStr);
@@ -64,62 +65,60 @@ public class Sort {
                 
                 System.out.println("\n------------");
        
-                if(dig < lowestDig){
-                    dig = lowestDig;
-              
-                switch(lowestDig){
-                case 0:
-               
-                    temp.add(i,tempStr);
-                    break;
-                case 1:
-               
-                    temp.add(i,tempStr);
-                    break;
-                case 2:
+//                if(dig < lowestDig){
+//                    dig = lowestDig;
+//              
+//                switch(lowestDig){
+//                case 0:
+//               
+//                    temp.add(i,tempStr);
+//                    break;
+//                case 1:
+//               
+//                    temp.add(i,tempStr);
+//                    break;
+//                case 2:
+//                 
+//                    temp.add(i,tempStr);
+//                    break;
+//                case 3:
+//                   
+//                    temp.add(i,tempStr);
+//                    break;
+//                case 4:
+//                   
+//                    temp.add(i,tempStr);
+//                    break;
+//                case 5:
+//                    
+//                    temp.add(i,tempStr);
+//                    break;
+//                case 6:
+//                   
+//                    temp.add(i,tempStr);
+//                    break;
+//                case 7:
+//                    
+//                    temp.add(i,tempStr);
+//                    break;
+//                case 8:
+//                    
+//                    temp.add(i,tempStr);
+//                    break;
+//                case 9:
+//                    
+//                    temp.add(i,tempStr);
+//                    break;
+//                default:
+//                    System.err.println("Invalid data type: " + dig);
+//            }
                  
-                    temp.add(i,tempStr);
-                    break;
-                case 3:
-                   
-                    temp.add(i,tempStr);
-                    break;
-                case 4:
-                   
-                    temp.add(i,tempStr);
-                    break;
-                case 5:
-                    
-                    temp.add(i,tempStr);
-                    break;
-                case 6:
-                   
-                    temp.add(i,tempStr);
-                    break;
-                case 7:
-                    
-                    temp.add(i,tempStr);
-                    break;
-                case 8:
-                    
-                    temp.add(i,tempStr);
-                    break;
-                case 9:
-                    
-                    temp.add(i,tempStr);
-                    break;
-                default:
-                    System.err.println("Invalid data type: " + dig);
-            }
-                }  
                 }
-             list.clear();
-             list.addAll(temp);
             } catch(IndexOutOfBoundsException e){
             System.err.println("Index out of bounds: " + e.getMessage());
             }
             
-            
+
            System.out.println(list.toString());
         }
     }  

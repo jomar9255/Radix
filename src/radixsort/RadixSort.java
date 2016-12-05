@@ -34,6 +34,10 @@ public class RadixSort {
             try{
                 while((inStr = in.readLine()) != null){
                 inputList.add(inStr);
+                
+                if(inStr.equals("")){//removes an accidental space from the arraylist
+                    inputList.remove("");
+                }
                     
             }
             }catch(IOException e){
@@ -45,6 +49,7 @@ public class RadixSort {
         Sort myNums = new Sort(inputList);
         System.out.println(myNums.toString());
         myNums.sort();
+        System.out.println(inputList.size());
         }
     
 }
